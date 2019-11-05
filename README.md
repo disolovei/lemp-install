@@ -1,6 +1,6 @@
-#On Ubuntu 18.04
+# On Ubuntu 18.04
 
-##1. Preparing
+## 1. Preparing
 
 ```shell script
 sudo apt update
@@ -10,7 +10,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-##2. Nginx
+## 2. Nginx
 
 [Link RU](https://www.digitalocean.com/community/tutorials/nginx-ubuntu-18-04-ru)
 
@@ -18,7 +18,7 @@ sudo apt upgrade
 sudo apt install nginx
 ```
 
-###2.1 Commans
+### 2.1 Commans
 
 ```shell script
 systemctl status nginx
@@ -48,7 +48,7 @@ sudo systemctl disable nginx
 sudo systemctl enable nginx
 ```
 
-##3. MySQL (MariaDB)
+## 3. MySQL (MariaDB)
 
 [Link EN](https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru)
 
@@ -56,7 +56,7 @@ sudo systemctl enable nginx
 sudo apt install mysql-server
 ```
 
-###3.1 Add new MySQL user
+### 3.1 Add new MySQL user
 
 ```mysql
 CREATE USER '$username'@'localhost' IDENTIFIED BY '$user_password';
@@ -70,7 +70,7 @@ GRANT ALL PRIVILEGES ON *.* TO '$username'@'localhost' WITH GRANT OPTION;
 exit
 ```
 
-##4. PHP
+## 4. PHP
 
 [Link EN](https://thishosting.rocks/install-php-on-ubuntu/)
 
@@ -88,7 +88,7 @@ php -v
 sudo apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php
 ```
 
-##5. PhpMyAdmin
+## 5. PhpMyAdmin
 
 [Link EN](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-nginx-on-an-ubuntu-18-04-server)
 
