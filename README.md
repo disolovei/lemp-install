@@ -101,6 +101,20 @@ sudo nano /etc/hosts
 127.0.0.1   example.loc
 ```
 
+### 2.3 Change server block folder owner (edit files allowed)
+
+```shell script
+sudo usermod -a -G www-data your_user
+```
+
+```shell script
+sudo chgrp -R www-data /var/www/example.loc/public_html
+```
+
+```shell script
+sudo chmod -R g+w /var/www/example.loc/public_html
+```
+
 ## 3. MySQL (MariaDB)
 
 [Link EN](https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru)
