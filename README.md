@@ -18,7 +18,7 @@ sudo apt upgrade
 sudo apt install nginx
 ```
 
-### 2.1 Commans
+### 2.1 Commands
 
 ```shell script
 systemctl status nginx
@@ -46,6 +46,59 @@ sudo systemctl disable nginx
 
 ```shell script
 sudo systemctl enable nginx
+```
+
+### 2.2 WordPress Server Block config simple example
+
+#### 2.2.1 Create server blog config file
+
+```shell script
+sudo nano /etc/nginx/sites-available/example.loc
+```
+
+#### 2.2.2 Put to config file
+
+```
+server {
+	listen 80;
+
+	server_name example.loc;
+
+	root /var/www/example.loc/public_html;
+
+	index index.php index.html;
+
+	location / {
+		try_files $uri $uri/ /index.php?$args;
+		autoindex on;
+	}
+
+	location ~ \.php$ {
+		include /etc/nginx/fastcgi_params;
+		try_files $uri =404;
+		include /etc/nginx/fastcgi.conf;
+		fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+	}
+}
+
+```
+
+#### 2.2.2 Server block activation
+
+```shell script
+sudo ln -s /etc//nginx/sites-available/example.loc /etc/nginx/modules-enabled/example.loc
+```
+
+#### 2.2.3 Open hosts file
+
+```shell script
+sudo nano /etc/hosts
+```
+
+#### 2.2.4 Add new line to hosts
+
+```
+127.0.0.1   example.loc
 ```
 
 ## 3. MySQL (MariaDB)
