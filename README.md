@@ -103,6 +103,8 @@ sudo nano /etc/hosts
 
 ### 2.3 Change server block folder owner (edit files allowed)
 
+[Link EN](https://www.digitalocean.com/community/questions/why-doesn-t-chown-r-root-www-data-work-on-my-wordpress-installation)
+
 ```shell script
 sudo usermod -a -G www-data your_user
 ```
